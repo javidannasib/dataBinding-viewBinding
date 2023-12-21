@@ -1,4 +1,11 @@
 package com.example.contactapp.features
 
-class MainActivityViewModel {
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import com.example.contactapp.model.Contact
+
+class MainActivityViewModel :ViewModel() {
+    var onButtonClickObserver = MutableLiveData<Boolen>()
+
+    fun 
 }

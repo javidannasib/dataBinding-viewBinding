@@ -1,42 +1,22 @@
 package com.example.productclasswork
 
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewProduct
+import androidx.lifecycle.ViewModel
 
-////MVVM
-//class MainActivityViewProduct : ViewProduct() {
-//
-//    val productList = mutableListOf<Product>()
-//
-//    var productName = MutableLiveData<String>()
-//    var productCode = MutableLiveData<String>()
-//    var productDescription = MutableLiveData<String>()
-//
-//    fun aboutProduct(name : String, code : String) {
-//        productName.postValue(name)
-//        productCode.postValue(code)
-//    }
-//
-//    fun productDescription() {
-//        productDescription.postValue("${name.value} ${code.value}")
-//    }
-//}
-
-//MVVM
-class MainActivityViewProduct : ViewProduct() {
+class MainActivityViewModel : ViewModel() {
 
     val productList = mutableListOf<Product>()
 
-    var name = MutableLiveData<String>()
-    var surName = MutableLiveData<String>()
-    var fullName = MutableLiveData<String>()
+    var productName = MutableLiveData<String>()
+    var productCode = MutableLiveData<String>()
+    var productDescription = MutableLiveData<String>()
 
-    fun productName(prm : String, surname : String) {
-        name.postValue(prm)
-        surName.postValue(surname)
+    fun aboutProduct(name : String, code : String) {
+        productName.postValue(name)
+        productCode.postValue(code)
     }
 
-    fun productDescription() {
-        fullName.postValue("${name.value} ${surName.value}")
+    fun updateProductDescription() {
+        productDescription.value = "Product details - ${productName.value} ${productCode.value}"
     }
-}
+    }

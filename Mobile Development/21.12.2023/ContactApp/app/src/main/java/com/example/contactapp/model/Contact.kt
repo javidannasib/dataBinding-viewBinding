@@ -1,4 +1,4 @@
 package com.example.contactapp.model
 
-class Contact {
+data class Contact(var name : String, var phoneNumber : Int) {
 }
